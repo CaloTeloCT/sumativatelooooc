@@ -1,0 +1,6 @@
+.square {
+    width: 100px;
+    height: 100px;
+    transition: background-color 0.5s ease;
+    /* Transición suave al cambiar de color */
+}

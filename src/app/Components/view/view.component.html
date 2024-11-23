@@ -1,1 +1,5 @@
-<p>view works!</p>
+<app-first-btn (colorChange)="onColorChange()"></app-first-btn>
+
+<div *ngIf="showVisualizer">
+    <app-visualizador></app-visualizador>
+</div>
