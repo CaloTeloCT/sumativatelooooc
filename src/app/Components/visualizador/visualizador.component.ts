@@ -13,6 +13,7 @@ export class VisualizadorComponent {
   currentColor: string = this.getRandomColor(); // Inicializa el color con un color aleatorio
   isCircle: boolean = false; // Propiedad para determinar si es un círculo
   message: string = ''; // Mensaje a mostrar
+  email: string = ''; // Almacena el correo ingresado
 
 
 
@@ -38,4 +39,10 @@ export class VisualizadorComponent {
   showMessage(msg: string) {
     this.message = msg; // Actualiza el mensaje
   }
+
+  // Método para mostrar el correo ingresado
+  displayEmail(email: string) {
+    this.email = email; // Actualiza el correo
+  }
+
 }

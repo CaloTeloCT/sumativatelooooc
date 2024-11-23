@@ -1,1 +1,7 @@
-<p>email works!</p>
+<!-- src/app/Components/Inputs/email/email.component.html -->
+<label for="email">Correo Electrónico:</label>
+<input id="email" [value]="email" (input)="onEmailInput($event?.target?.value || '')" required />
+
+<div *ngIf="emailError">
+    <small>{{ emailError }}</small>
+</div>

@@ -3,6 +3,7 @@
 <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
 <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
 <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
+<app-email (emailChange)="handleEmailChange($event)"></app-email> <!-- Conectar el evento -->
 <div *ngIf="showVisualizer">
     <app-visualizador></app-visualizador>
 </div>

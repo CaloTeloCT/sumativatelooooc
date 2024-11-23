@@ -1,11 +1,32 @@
-import { Component } from '@angular/core';
+// src/app/Components/Inputs/email/email.component.ts
+import { NgIf } from '@angular/common';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-email',
-  imports: [],
+  imports: [NgIf],
   templateUrl: './email.component.html',
   styleUrl: './email.component.css'
 })
 export class EmailComponent {
+  email: string = ''; // Almacena el correo ingresado
+  emailError: string = ''; // Almacena el mensaje de error
 
+  @Output() emailChange = new EventEmitter<string>(); // Evento para enviar el correo
+
+  onEmailInput(value: string) {
+    this.email = value; // Actualiza el correo
+    this.emailError = this.validateEmail(value); // Valida el correo
+    this.emailChange.emit(this.email); // Emitir el correo cada vez que cambia
+  }
+
+  validateEmail(email: string): string {
+    if (!email) {
+      return 'El correo es obligatorio.';
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      return 'El correo debe contener un formato válido (debe llevar @).';
+    }
+    return '';
+  }
 }

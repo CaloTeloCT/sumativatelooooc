@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { SecondBtnComponent } from '../Botones/second-btn/second-btn.component';
 import { AceptarBtnComponent } from '../Botones/aceptar-btn/aceptar-btn.component';
 import { CancelarBtnComponent } from '../Botones/cancelar-btn/cancelar-btn.component';
+import { EmailComponent } from '../Inputs/email/email.component';
 
 @Component({
   selector: 'app-view',
-  imports: [VisualizadorComponent, FirstBtnComponent, CommonModule, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent],
+  imports: [VisualizadorComponent, FirstBtnComponent, CommonModule, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent, EmailComponent],
   templateUrl: './view.component.html',
   styleUrl: './view.component.css'
 })
@@ -32,5 +33,9 @@ export class ViewComponent {
 
   handleCanceled() {
     this.visualizador.showMessage('Cancelado con éxito'); // Muestra el mensaje de cancelación en el Visualizador
+  }
+
+  handleEmailChange(email: string) {
+    this.visualizador.displayEmail(email); // Llama al método displayEmail del Visualizador
   }
 }
