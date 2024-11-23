@@ -1,15 +1,18 @@
 // src/app/Components/visualizador/visualizador.component.ts
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 
 @Component({
   selector: 'app-visualizador',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './visualizador.component.html',
   styleUrl: './visualizador.component.css'
 })
 export class VisualizadorComponent {
   currentColor: string = this.getRandomColor(); // Inicializa el color con un color aleatorio
+  isCircle: boolean = false; // Propiedad para determinar si es un círculo
+
 
   // Método para cambiar el color
   changeColor() {
@@ -22,5 +25,10 @@ export class VisualizadorComponent {
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  // Método para alternar entre cuadrado y círculo
+  toggleShape() {
+    this.isCircle = !this.isCircle; // Cambia la forma
   }
 }
