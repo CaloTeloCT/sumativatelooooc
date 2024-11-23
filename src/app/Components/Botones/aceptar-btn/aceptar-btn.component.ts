@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// src/app/Components/Botones/aceptar-btn/aceptar-btn.component.ts
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-aceptar-btn',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './aceptar-btn.component.css'
 })
 export class AceptarBtnComponent {
+  @Output() accepted = new EventEmitter<void>();
 
+  onClick() {
+    this.accepted.emit(); // Emitir el evento al hacer clic
+  }
 }

@@ -12,6 +12,8 @@ import { Component, Input } from '@angular/core';
 export class VisualizadorComponent {
   currentColor: string = this.getRandomColor(); // Inicializa el color con un color aleatorio
   isCircle: boolean = false; // Propiedad para determinar si es un círculo
+  message: string = ''; // Mensaje a mostrar
+
 
 
   // Método para cambiar el color
@@ -30,5 +32,10 @@ export class VisualizadorComponent {
   // Método para alternar entre cuadrado y círculo
   toggleShape() {
     this.isCircle = !this.isCircle; // Cambia la forma
+  }
+
+  // Método para mostrar un mensaje
+  showMessage(msg: string) {
+    this.message = msg; // Actualiza el mensaje
   }
 }

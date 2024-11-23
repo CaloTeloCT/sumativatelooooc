@@ -1,0 +1,5 @@
+/* src/app/Components/Botones/aceptar-btn/aceptar-btn.component.css */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
