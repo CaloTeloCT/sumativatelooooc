@@ -14,7 +14,8 @@ export class VisualizadorComponent {
   isCircle: boolean = false; // Propiedad para determinar si es un círculo
   message: string = ''; // Mensaje a mostrar
   email: string = ''; // Almacena el correo ingresado
-
+  @Input() password: string = ''; // Propiedad para recibir la contraseña
+  @Input() passwordStrength: string = ''; // Propiedad para recibir la fuerza de la contraseña
 
 
   // Método para cambiar el color
@@ -43,6 +44,16 @@ export class VisualizadorComponent {
   // Método para mostrar el correo ingresado
   displayEmail(email: string) {
     this.email = email; // Actualiza el correo
+  }
+
+  // Método para mostrar la contraseña (opcional)
+  displayPassword(password: string) {
+    this.password = password;
+  }
+
+  // Método para mostrar la fuerza de la contraseña (opcional)
+  displayPasswordStrength(strength: string) {
+    this.passwordStrength = strength;
   }
 
 }
