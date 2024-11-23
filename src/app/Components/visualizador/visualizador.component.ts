@@ -16,6 +16,8 @@ export class VisualizadorComponent {
   email: string = ''; // Almacena el correo ingresado
   @Input() password: string = ''; // Propiedad para recibir la contraseña
   @Input() passwordStrength: string = ''; // Propiedad para recibir la fuerza de la contraseña
+  text: string = ''; // Almacena el texto ingresado
+
 
 
   // Método para cambiar el color
@@ -54,6 +56,11 @@ export class VisualizadorComponent {
   // Método para mostrar la fuerza de la contraseña (opcional)
   displayPasswordStrength(strength: string) {
     this.passwordStrength = strength;
+  }
+
+  // Método para mostrar el texto ingresado
+  displayText(text: string) {
+    this.text = text;
   }
 
 }

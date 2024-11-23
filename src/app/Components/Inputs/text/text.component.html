@@ -1,1 +1,4 @@
-<p>text works!</p>
+<div>
+    <label for="textInput">Ingrese texto:</label>
+    <input type="text" id="textInput" [(ngModel)]="text" (ngModelChange)="onTextChange($event)" />
+</div>

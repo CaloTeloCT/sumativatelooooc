@@ -1,16 +1,12 @@
-<!-- src/app/Components/view/view.component.html -->
-<app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
-<app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
-<app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
-<app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
-<app-email (emailChange)="handleEmailChange($event)"></app-email> <!-- Conectar el evento -->
-<!-- src/app/Components/view/view.component.html -->
-<!-- src/app/Components/view/view.component.html -->
-<app-password (passwordChange)="handlePasswordChange($event)"
-    (passwordStrengthChange)="handlePasswordStrengthChange($event)">
-</app-password>
+<div>
+    <app-email (emailChange)="handleEmailChange($event)"></app-email>
+    <app-password (passwordChange)="handlePasswordChange($event)"></app-password>
+    <app-text (textChange)="handleTextChange($event)"></app-text>
 
-<div *ngIf="showVisualizer">
-    <app-visualizador [password]="password" [passwordStrength]="passwordStrength">
-    </app-visualizador>
+    <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
+    <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
+    <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
+    <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
+
+    <app-visualizador *ngIf="showVisualizer"></app-visualizador>
 </div>

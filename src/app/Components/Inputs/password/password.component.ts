@@ -10,31 +10,12 @@ import { FormsModule, NgModel } from '@angular/forms';
   styleUrl: './password.component.css'
 })
 export class PasswordComponent {
-  password: string = '';
-  passwordStrength: string = '';
+  password: string = ''; // Almacena la contraseña ingresada
 
-  @Output() passwordChange = new EventEmitter<string>();
-  @Output() passwordStrengthChange = new EventEmitter<string>();
+  @Output() passwordChange = new EventEmitter<string>(); // Evento para enviar la contraseña
 
-  onPasswordInput(event: Event) {
-    // Type assertion
-    const inputElement = event.target as HTMLInputElement;
-    const value = inputElement.value;
-
-    this.password = value;
-    this.passwordStrength = this.evaluatePasswordStrength(value);
-
-    this.passwordChange.emit(this.password);
-    this.passwordStrengthChange.emit(this.passwordStrength);
-  }
-
-  evaluatePasswordStrength(password: string): string {
-    if (password.length < 6) {
-      return 'Demasiado corta';
-    } else if (password.length < 10) {
-      return 'Moderada';
-    } else {
-      return 'Fuerte';
-    }
+  onPasswordInput(value: string) {
+    this.password = value; // Actualiza la contraseña
+    this.passwordChange.emit(this.password); // Emitir la contraseña cada vez que cambia
   }
 }

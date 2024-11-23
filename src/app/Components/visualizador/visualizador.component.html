@@ -1,8 +1,11 @@
 <!-- src/app/Components/visualizador/visualizador.component.html -->
 <div [ngClass]="{'color-box': true, 'circle': isCircle}" [style.backgroundColor]="currentColor"></div>
 <p *ngIf="message">{{ message }}</p> <!-- Mostrar el mensaje si existe -->
-<p>Correo ingresado: {{ email }}</p> <!-- Mostrar el correo ingresado en tiempo real -->
+
 <div>
+    <h3>Datos ingresados:</h3>
+    <p>Email: {{ email }}</p>
     <p>Contraseña: {{ password }}</p>
     <p>Fuerza de la contraseña: {{ passwordStrength }}</p>
+    <p>Texto: {{ text }}</p>
 </div>

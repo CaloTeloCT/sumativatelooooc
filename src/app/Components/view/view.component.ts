@@ -8,10 +8,11 @@ import { AceptarBtnComponent } from '../Botones/aceptar-btn/aceptar-btn.componen
 import { CancelarBtnComponent } from '../Botones/cancelar-btn/cancelar-btn.component';
 import { EmailComponent } from '../Inputs/email/email.component';
 import { PasswordComponent } from '../Inputs/password/password.component';
+import { TextComponent } from '../Inputs/text/text.component';
 
 @Component({
   selector: 'app-view',
-  imports: [VisualizadorComponent, FirstBtnComponent, CommonModule, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent, EmailComponent, PasswordComponent],
+  imports: [VisualizadorComponent, FirstBtnComponent, CommonModule, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent, EmailComponent, PasswordComponent, TextComponent],
   templateUrl: './view.component.html',
   styleUrl: './view.component.css'
 })
@@ -20,7 +21,7 @@ export class ViewComponent {
   showVisualizer = false;
   email: string = '';
   password: string = ''; // Añadir propiedad para almacenar la contraseña
-  passwordStrength: string = ''; // Añadir propiedad para almacenar la fuerza de la contraseña
+  text: string = '';
 
   handleColorChange() {
     this.showVisualizer = true; // Muestra el visualizador
@@ -43,21 +44,11 @@ export class ViewComponent {
     this.visualizador.displayEmail(email); // Llama al método displayEmail del Visualizador
   }
 
-  // Método para manejar el cambio de contraseña
   handlePasswordChange(password: string) {
-    this.password = password;
-    // Si tienes un visualizador, puedes actualizar su contenido aquí
-    if (this.visualizador) {
-      this.visualizador.displayPassword(password);
-    }
+    this.visualizador.displayPassword(password); // Llama al método displayPassword del Visualizador
   }
 
-  // Método para manejar el cambio de fuerza de contraseña
-  handlePasswordStrengthChange(strength: string) {
-    this.passwordStrength = strength;
-    // Si tienes un visualizador, puedes actualizar su contenido aquí
-    if (this.visualizador) {
-      this.visualizador.displayPasswordStrength(strength);
-    }
+  handleTextChange(text: string) {
+    this.visualizador.displayText(text); // Llama al método displayText del Visualizador
   }
 }  
