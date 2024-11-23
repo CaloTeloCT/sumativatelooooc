@@ -1,6 +1,6 @@
 // src/app/Components/visualizador/visualizador.component.ts
-import { Component } from '@angular/core';
-import { FirstBtnComponent } from '../Botones/first-btn/first-btn.component';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-visualizador',
@@ -9,12 +9,14 @@ import { FirstBtnComponent } from '../Botones/first-btn/first-btn.component';
   styleUrl: './visualizador.component.css'
 })
 export class VisualizadorComponent {
-  currentColor: string = this.getRandomColor();
+  currentColor: string = this.getRandomColor(); // Inicializa el color con un color aleatorio
 
+  // Método para cambiar el color
   changeColor() {
     this.currentColor = this.getRandomColor();
   }
 
+  // Método para generar un color RGB aleatorio
   getRandomColor(): string {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);

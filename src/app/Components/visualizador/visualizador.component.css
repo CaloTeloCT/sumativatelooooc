@@ -1,6 +1,6 @@
-.square {
+/* src/app/Components/visualizador/visualizador.component.css */
+.color-box {
     width: 100px;
     height: 100px;
-    transition: background-color 0.5s ease;
-    /* Transición suave al cambiar de color */
+    border: 1px solid #000;
 }

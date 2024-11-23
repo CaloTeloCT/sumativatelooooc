@@ -11,6 +11,6 @@ export class FirstBtnComponent {
   @Output() colorChange = new EventEmitter<void>();
 
   onClick() {
-    this.colorChange.emit();
+    this.colorChange.emit(); // Emitir el evento al hacer clic
   }
 }

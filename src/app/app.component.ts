@@ -4,7 +4,7 @@ import { ViewComponent } from './Components/view/view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ViewComponent],
+  imports: [ViewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
