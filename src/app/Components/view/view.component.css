@@ -1,8 +1,61 @@
-/* src/app/Components/view/view.component.css */
-button {
+.container {
+    display: flex;
+    height: 100vh;
+    /* Altura completa de la ventana */
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    /* Degradado navideño */
+}
+
+.visualizer-container {
+    flex: 1;
+    /* Ocupa la mitad izquierda */
+    display: flex;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    position: relative;
+    /* Para posicionar decoraciones */
+    padding: 20px;
+    border-right: 5px solid #fff;
+    /* Borde decorativo */
+}
+
+.controls-container {
+    flex: 1;
+    /* Ocupa la mitad derecha */
+    display: flex;
+    flex-direction: column;
+    /* Alineación vertical */
+    justify-content: center;
+    /* Centrado vertical */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco con opacidad */
+}
+
+.header {
+    text-align: center;
+    color: #b22222;
+    /* Color rojo navideño */
+    font-family: 'Cursive', sans-serif;
+    /* Fuente decorativa */
     margin-bottom: 20px;
 }
 
-.color-box {
-    margin-top: 20px;
+/* Estilos adicionales para los botones y inputs */
+input,
+button {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+input:focus,
+button:hover {
+    border-color: #b22222;
+    /* Efecto al enfocar o pasar el mouse */
+    box-shadow: 0 0 10px rgba(178, 34, 34, 0.5);
+    /* Sombra suave */
 }

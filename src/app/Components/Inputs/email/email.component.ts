@@ -1,10 +1,11 @@
 // src/app/Components/Inputs/email/email.component.ts
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, Output, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-email',
-  imports: [NgIf],
+  imports: [CommonModule, FormsModule],
   templateUrl: './email.component.html',
   styleUrl: './email.component.css'
 })

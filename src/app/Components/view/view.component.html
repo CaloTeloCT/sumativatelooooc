@@ -1,12 +1,20 @@
-<div>
+<div class="visualizador-container">
+    <app-visualizador></app-visualizador> <!-- Asegúrate de que esto esté presente -->
+</div>
+<div class="controls-container">
     <app-email (emailChange)="handleEmailChange($event)"></app-email>
     <app-password (passwordChange)="handlePasswordChange($event)"></app-password>
     <app-text (textChange)="handleTextChange($event)"></app-text>
+    <label for="colorPicker">Selecciona un color personalizado:</label>
+    <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
+
+    <label>
+        <input type="checkbox" [(ngModel)]="animationsEnabled" (ngModelChange)="toggleAnimations()" />
+        Activar Animaciones
+    </label>
 
     <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
     <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
     <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
     <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
-
-    <app-visualizador *ngIf="showVisualizer"></app-visualizador>
 </div>

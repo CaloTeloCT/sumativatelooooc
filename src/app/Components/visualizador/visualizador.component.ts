@@ -16,13 +16,31 @@ export class VisualizadorComponent {
   email: string = ''; // Almacena el correo ingresado
   @Input() password: string = ''; // Propiedad para recibir la contraseña
   @Input() passwordStrength: string = ''; // Propiedad para recibir la fuerza de la contraseña
-  text: string = ''; // Almacena el texto ingresado
+  text: string = '';
+  animationsEnabled: boolean = true; // Estado de las animaciones
 
 
 
   // Método para cambiar el color
-  changeColor() {
-    this.currentColor = this.getRandomColor();
+  changeColor(customColor?: string) {
+    this.currentColor = customColor || this.getRandomColor();
+    if (this.animationsEnabled) {
+      // Aplicar animación si está habilitada
+      this.animateColorChange();
+    }
+  }
+
+  // Método para animar el cambio de color
+  animateColorChange() {
+    const square = document.querySelector('.square') as HTMLElement;
+    if (square) {
+      square.style.transition = 'background-color 0.5s ease, transform 0.5s ease'; // Transición suave
+      square.style.opacity = '0'; // Desvanecer
+      setTimeout(() => {
+        square.style.backgroundColor = this.currentColor; // Cambiar color
+        square.style.opacity = '1'; // Volver a mostrar
+      }, 500); // Esperar a que termine el desvanecimiento
+    }
   }
 
   // Método para generar un color RGB aleatorio

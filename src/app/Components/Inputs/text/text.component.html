@@ -1,4 +1,4 @@
-<div>
-    <label for="textInput">Ingrese texto:</label>
-    <input type="text" id="textInput" [(ngModel)]="text" (ngModelChange)="onTextChange($event)" />
+<div class="input-container">
+    <input type="text" (input)="onTextChange($event)" placeholder="Ingresa texto aquí" />
+    <!-- Puedes agregar elementos adicionales aquí si es necesario -->
 </div>

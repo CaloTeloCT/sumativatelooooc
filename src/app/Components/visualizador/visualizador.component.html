@@ -1,6 +1,9 @@
 <!-- src/app/Components/visualizador/visualizador.component.html -->
-<div [ngClass]="{'color-box': true, 'circle': isCircle}" [style.backgroundColor]="currentColor"></div>
-<p *ngIf="message">{{ message }}</p> <!-- Mostrar el mensaje si existe -->
+<div class="visualizador" [ngStyle]="{'background-color': currentColor}">
+    <div class="square" [ngClass]="{'circle': isCircle}"></div>
+    <p class="message">{{ message }}</p>
+    <p class="color-indicator">Color Actual: {{ currentColor }}</p>
+</div>
 
 <div>
     <h3>Datos ingresados:</h3>

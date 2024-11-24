@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,9 +8,25 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './text.component.css'
 })
 export class TextComponent {
-  text: string = ''; // Variable para almacenar el texto ingresado
+  @Output() textChange = new EventEmitter<string>();
 
-  onTextChange(value: string) {
-    this.text = value; // Actualiza la variable con el texto ingresado
+  onTextChange(event: any) {
+    // Verifica si 'event' es un objeto y tiene la propiedad 'target'
+    if (typeof event === 'object' && event !== null && 'target' in event) {
+      // Verifica si 'event.target' existe y tiene la propiedad 'value'
+      if (event.target && typeof event.target.value !== 'undefined') {
+        this.textChange.emit(event.target.value);
+      } else {
+        // Maneja el caso donde 'event.target.value' es undefined
+        console.warn('El valor del evento es indefinido en onTextChange', event);
+        // Puedes emitir una cadena vacía u otro valor por defecto:
+        this.textChange.emit('');
+      }
+    } else {
+      // Maneja el caso donde 'event' no es un objeto o no tiene 'target'
+      console.warn('Evento inválido en onTextChange', event);
+      // Puedes emitir una cadena vacía u otro valor por defecto:
+      this.textChange.emit('');
+    }
   }
 }
