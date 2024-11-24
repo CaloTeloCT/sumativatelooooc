@@ -71,7 +71,6 @@ export class VisualizadorComponent {
     this.password = password;
   }
 
-  // Método para mostrar la fuerza de la contraseña (opcional)
   displayPasswordStrength(strength: string) {
     this.passwordStrength = strength;
   }

@@ -5,17 +5,37 @@ import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-password',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './password.component.html',
   styleUrl: './password.component.css'
 })
 export class PasswordComponent {
-  password: string = ''; // Almacena la contraseña ingresada
+  password: string = '';
+  passwordStrength: string = '';
 
-  @Output() passwordChange = new EventEmitter<string>(); // Evento para enviar la contraseña
+  @Output() passwordChange = new EventEmitter<string>();
+  @Output() passwordStrengthChange = new EventEmitter<string>();
 
-  onPasswordInput(value: string) {
-    this.password = value; // Actualiza la contraseña
-    this.passwordChange.emit(this.password); // Emitir la contraseña cada vez que cambia
+  onPasswordInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const value = inputElement.value;
+
+    this.password = value;
+    this.passwordStrength = this.evaluatePasswordStrength(value);
+
+    this.passwordChange.emit(this.password);
+    this.passwordStrengthChange.emit(this.passwordStrength);
+  }
+
+  evaluatePasswordStrength(password: string): string {
+    if (password.length < 6) {
+      return 'Muy débil';
+    } else if (password.length < 8) {
+      return 'Débil';
+    } else if (password.length < 10) {
+      return 'Moderada';
+    } else {
+      return 'Fuerte';
+    }
   }
 }

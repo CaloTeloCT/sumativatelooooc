@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ViewComponent {
   @ViewChild(VisualizadorComponent) visualizador!: VisualizadorComponent; // Referencia al VisualizadorComponent
+  @ViewChild(PasswordComponent) passwordComponent!: PasswordComponent;
   showVisualizer = false;
   email: string = '';
   password: string = '';
@@ -58,6 +59,10 @@ export class ViewComponent {
 
   handlePasswordChange(password: string) {
     this.visualizador.displayPassword(password);
+  }
+
+  handlePasswordStrengthChange(strength: string) {
+    this.visualizador.displayPasswordStrength(strength);
   }
 
   handleTextChange(text: string) {

@@ -3,8 +3,9 @@
 </div>
 <div class="controls-container">
     <app-email (emailChange)="handleEmailChange($event)"></app-email>
-    <app-password (passwordChange)="handlePasswordChange($event)"></app-password>
-    <app-text (textChange)="handleTextChange($event)"></app-text>
+    <app-password (passwordChange)="handlePasswordChange($event)"
+        (passwordStrengthChange)="handlePasswordStrengthChange($event)">
+    </app-password> <app-text (textChange)="handleTextChange($event)"></app-text>
     <label for="colorPicker">Selecciona un color personalizado:</label>
     <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
 
