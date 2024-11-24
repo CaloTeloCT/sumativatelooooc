@@ -50,7 +50,7 @@ export class ViewComponent {
   }
 
   handleCanceled() {
-    this.visualizador.showMessage('Cancelado con éxito'); // Muestra el mensaje de cancelación en el Visualizador
+    this.visualizador.showMessage('Cancelado con éxito', true); // Muestra el mensaje de cancelación
   }
 
   handleEmailChange(email: string) {

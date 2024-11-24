@@ -39,6 +39,7 @@ export class VisualizadorComponent {
       setTimeout(() => {
         square.style.backgroundColor = this.currentColor; // Cambiar color
         square.style.opacity = '1'; // Volver a mostrar
+        this.showMessage(`Color cambiado a: ${this.currentColor}`); // Mensaje dinámico
       }, 500); // Esperar a que termine el desvanecimiento
     }
   }
@@ -57,8 +58,14 @@ export class VisualizadorComponent {
   }
 
   // Método para mostrar un mensaje
-  showMessage(msg: string) {
+  showMessage(msg: string, isCanceled: boolean = false) {
     this.message = msg; // Actualiza el mensaje
+    const messageElement = document.querySelector('.message') as HTMLElement;
+    if (isCanceled) {
+      messageElement.classList.add('message-canceled'); // Añade clase de cancelación
+    } else {
+      messageElement.classList.remove('message-canceled'); // Remueve clase de cancelación si no es
+    }
   }
 
   // Método para mostrar el correo ingresado

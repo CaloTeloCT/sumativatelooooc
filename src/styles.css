@@ -1,8 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
-/* Estilos globales para la aplicación */
+/* src/styles.css */
+:root {
+    --color-red: #ff0000;
+    --color-green: #008000;
+    --color-gold: #ffd700;
+    --color-white: #ffffff;
+    --color-light-blue: #add8e6;
+    --color-error: #ff4d4d;
+    /* Rojo intenso para errores */
+    --color-warning: #ffcc00;
+    /* Dorado para advertencias */
+    --color-success: #4caf50;
+    /* Verde para éxito */
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, var(--color-white), var(--color-light-blue));
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-green);
+}
+
+.button {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--color-gold);
+    transform: scale(1.05);
+}
+
+.input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-light-blue);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.input-error {
+    border-color: var(--color-error);
+}
+
+.input-warning {
+    border-color: var(--color-warning);
+}
+
+.input-success {
+    border-color: var(--color-success);
+}
+
+.error-message {
+    color: var(--color-error);
+    font-size: 0.9em;
+}
+
+.success-message {
+    color: var(--color-success);
+    font-size: 0.9em;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-light-blue);
+    margin: 20px auto;
+    border: 5px solid var(--color-gold);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.square:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.visualizador {
+    text-align: center;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .controls-container {
+        align-items: center;
+    }
 }

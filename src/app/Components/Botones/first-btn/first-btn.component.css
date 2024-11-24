@@ -1,5 +1,6 @@
 /* src/app/Components/Botones/first-btn/first-btn.component.css */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-}
+.button {
+    background-color: var(--color-green);
+    color: var(--color-white);
+  }
+  

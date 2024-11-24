@@ -1,5 +1,5 @@
-/* src/app/Components/Botones/second-btn/second-btn.component.css */
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-}
+  /* src/app/Components/Botones/second-btn/second-btn.component.css */
+  .button {
+      background-color: var(--color-red);
+      color: var(--color-white);
+  }
