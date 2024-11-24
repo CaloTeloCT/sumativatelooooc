@@ -10,10 +10,11 @@ import { EmailComponent } from '../Inputs/email/email.component';
 import { PasswordComponent } from '../Inputs/password/password.component';
 import { TextComponent } from '../Inputs/text/text.component';
 import { FormsModule } from '@angular/forms';
+import { DarkMBtnComponent } from '../Botones/dark-m-btn/dark-m-btn.component';
 
 @Component({
   selector: 'app-view',
-  imports: [VisualizadorComponent, FirstBtnComponent, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent, EmailComponent, PasswordComponent, TextComponent, CommonModule, FormsModule],
+  imports: [VisualizadorComponent, FirstBtnComponent, SecondBtnComponent, AceptarBtnComponent, CancelarBtnComponent, EmailComponent, PasswordComponent, TextComponent, DarkMBtnComponent, CommonModule, FormsModule],
   templateUrl: './view.component.html',
   styleUrl: './view.component.css'
 })
@@ -67,5 +68,9 @@ export class ViewComponent {
 
   handleTextChange(text: string) {
     this.visualizador.displayText(text);
+  }
+
+  handleDarkModeToggle() {
+    this.visualizador.toggleDarkMode(); // Llama al método toggleDarkMode del Visualizador
   }
 }  

@@ -18,6 +18,8 @@ export class VisualizadorComponent {
   @Input() passwordStrength: string = ''; // Propiedad para recibir la fuerza de la contraseña
   text: string = '';
   animationsEnabled: boolean = true; // Estado de las animaciones
+  isDarkMode: boolean = false; // Propiedad para controlar el modo oscuro
+
 
 
 
@@ -85,6 +87,20 @@ export class VisualizadorComponent {
   // Método para mostrar el texto ingresado
   displayText(text: string) {
     this.text = text;
+  }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode; // Cambia el estado del modo oscuro
+    this.applyDarkModeStyles(); // Aplica los estilos del modo oscuro
+  }
+
+  applyDarkModeStyles() {
+    const body = document.body;
+    if (this.isDarkMode) {
+      body.classList.add('dark-mode'); // Añade clase para modo oscuro
+    } else {
+      body.classList.remove('dark-mode'); // Remueve clase para modo claro
+    }
   }
 
 }

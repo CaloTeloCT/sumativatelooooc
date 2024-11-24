@@ -14,7 +14,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, var(--color-white), var(--color-light-blue));
+    background: #add8e6;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 20px;
@@ -94,6 +94,8 @@ h1 {
     font-weight: bold;
 }
 
+
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -102,4 +104,39 @@ h1 {
     .controls-container {
         align-items: center;
     }
+}
+
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    /* Transiciones suaves */
+}
+
+.dark-mode {
+    background-color: #121212;
+    /* Fondo oscuro */
+    color: #ffffff;
+    /* Texto blanco */
+}
+
+.dark-mode .button {
+    background-color: #333;
+    /* Botón oscuro */
+    color: #ffffff;
+    /* Texto blanco en el botón */
+}
+
+.dark-mode .square {
+    background-color: #444;
+    /* Color de fondo para el cuadrado en modo oscuro */
+}
+
+.dark-mode .circle {
+    background-color: #444;
+    /* Color de fondo para el círculo en modo oscuro */
+}
+
+.message {
+    color: #ffffff;
+    /* Mensaje blanco en modo oscuro */
 }

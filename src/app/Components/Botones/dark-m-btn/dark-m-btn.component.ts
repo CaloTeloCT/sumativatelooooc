@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+// src/app/Components/Botones/dark-m-btn/dark-m-btn.component.ts
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dark-m-btn',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './dark-m-btn.component.css'
 })
 export class DarkMBtnComponent {
+  @Output() toggleDarkMode = new EventEmitter<void>();
 
+  onClick() {
+    this.toggleDarkMode.emit(); // Emitir el evento al hacer clic
+  }
 }
