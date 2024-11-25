@@ -1,6 +1,11 @@
 /* src/app/Components/Botones/first-btn/first-btn.component.css */
-.button {
-    background-color: var(--color-green);
-    color: var(--color-white);
-  }
-  
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  /* Cambia el color de fondo al pasar el mouse */
+  transform: scale(1.05);
+  /* Aumenta ligeramente el tamaño del botón */
+}

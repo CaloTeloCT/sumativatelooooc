@@ -26,6 +26,18 @@
 }
 
 /* src/app/Components/visualizador/visualizador.component.css */
+
+.shape {
+    width: 100px;
+    /* Ajusta según sea necesario */
+    height: 100px;
+    /* Ajusta según sea necesario */
+    background-color: #4CAF50;
+    /* Color inicial */
+    transition: background-color 0.3s ease;
+    /* Transición suave para cambios de color */
+}
+
 .message {
     color: var(--color-green);
     /* Color por defecto */

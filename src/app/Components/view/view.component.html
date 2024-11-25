@@ -1,22 +1,32 @@
-<div class="visualizador-container">
-    <app-visualizador></app-visualizador> <!-- Asegúrate de que esto esté presente -->
-</div>
-<div class="controls-container">
-    <app-email (emailChange)="handleEmailChange($event)"></app-email>
-    <app-password (passwordChange)="handlePasswordChange($event)"
-        (passwordStrengthChange)="handlePasswordStrengthChange($event)">
-    </app-password> <app-text (textChange)="handleTextChange($event)"></app-text>
-    <label for="colorPicker">Selecciona un color personalizado:</label>
-    <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
+<div class="container">
+    <div class="controls">
+        <h2>Controles</h2>
+        <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
+        <br>
+        <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
+        <br>
+        <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
+        <br>
+        <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
+        <br>
+        <app-dark-m-btn (toggleDarkMode)="handleDarkModeToggle()"></app-dark-m-btn>
+        <br>
+        <label for="colorPicker">Selecciona un color personalizado:</label>
+        <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
+        <label>
+            <input type="checkbox" [(ngModel)]="animationsEnabled" (ngModelChange)="toggleAnimations()" />
+            Activar Animaciones
+        </label>
 
-    <label>
-        <input type="checkbox" [(ngModel)]="animationsEnabled" (ngModelChange)="toggleAnimations()" />
-        Activar Animaciones
-    </label>
+        <app-email (emailChange)="handleEmailChange($event)"></app-email>
+        <app-password (passwordChange)="handlePasswordChange($event)"
+            (passwordStrengthChange)="handlePasswordStrengthChange($event)">
+        </app-password>
+        <app-text (textChange)="handleTextChange($event)"></app-text>
 
-    <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
-    <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
-    <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
-    <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
-    <app-dark-m-btn (toggleDarkMode)="handleDarkModeToggle()"></app-dark-m-btn>
+    </div>
+
+    <div class="visualizador">
+        <app-visualizador></app-visualizador>
+    </div>
 </div>

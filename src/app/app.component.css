@@ -1,3 +1,12 @@
-h1 {
-    text-align: center;
-}   
+:root {
+    --primary-color: #4CAF50;
+    /* Color primario */
+    --secondary-color: #f2f2f2;
+    /* Color de fondo */
+    --text-color: #333;
+    /* Color del texto */
+    --border-color: #ccc;
+    /* Color de borde */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    /* Color de sombra */
+}
