@@ -1,14 +1,16 @@
 .input-container {
-    margin: 10px 0;
+    font-family: 'Mountains of Christmas', cursive;
 }
 
-.input{
+.input {
     border: 2px solid var(--color-primary-green);
     border-radius: 25px;
     padding: 10px;
     margin: 10px 0;
     transition: border-color var(--transition), box-shadow var(--transition);
 }
+
+
 
 .input:focus {
     border-color: var(--color-accent-gold);

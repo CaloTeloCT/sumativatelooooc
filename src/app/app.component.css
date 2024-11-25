@@ -1,0 +1,18 @@
+.app-container {
+    padding: 20px;
+    /* Espaciado interno */
+    max-width: 1200px;
+    /* Ancho máximo */
+    margin: 0 auto;
+    /* Centrar el contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s;
+    /* Transición suave para el fondo */
+}
+
+/* Estilos específicos para el modo oscuro */
+.dark-mode .app-container {
+    background-color: #1e1e1e;
+    /* Fondo oscuro para el contenedor */
+}

@@ -1,27 +1,30 @@
-<div class="container">
-    <div class="controls">
-        <h2>Controles</h2>
+<div class="app-container" [ngClass]="{'dark-mode': isDarkMode}">
+    <h2>Controles</h2>
+    <div class="button-group">
         <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
         <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
         <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
         <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
         <app-dark-m-btn (toggleDarkMode)="handleDarkModeToggle()"></app-dark-m-btn>
-        <label for="colorPicker">Selecciona un color personalizado:</label>
-        <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
-        <label>
-            <input type="checkbox" [(ngModel)]="animationsEnabled" (ngModelChange)="toggleAnimations()" />
-            Activar Animaciones
-        </label>
 
-        <app-email (emailChange)="handleEmailChange($event)"></app-email>
-        <app-password (passwordChange)="handlePasswordChange($event)"
-            (passwordStrengthChange)="handlePasswordStrengthChange($event)">
-        </app-password>
-        <app-text (textChange)="handleTextChange($event)"></app-text>
+        <div class="controls">
 
+
+            <label for="colorPicker">Selecciona un color personalizado:</label>
+            <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
+            <label>
+                <input type="checkbox" [(ngModel)]="animationsEnabled" (ngModelChange)="toggleAnimations()" />
+                Activar Animaciones
+            </label>
+
+            <app-email (emailChange)="handleEmailChange($event)"></app-email>
+            <app-password (passwordChange)="handlePasswordChange($event)"
+                (passwordStrengthChange)="handlePasswordStrengthChange($event)">
+            </app-password>
+            <app-text (textChange)="handleTextChange($event)"></app-text>
+        </div>
+
+        <div class="visualizador">
+            <app-visualizador></app-visualizador>
+        </div>
     </div>
-
-    <div class="visualizador">
-        <app-visualizador></app-visualizador>
-    </div>
-</div>

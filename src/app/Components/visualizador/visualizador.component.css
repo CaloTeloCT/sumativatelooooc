@@ -1,8 +1,6 @@
 /* src/app/Components/visualizador/visualizador.component.css */
 .visualizador-container {
-    background-color: #f0f0f0;
-    /* Fondo suave en modo claro */
-    border: 2px solid #ccc;
+    border-color: var(--color-primary-green);
     /* Borde del visualizador */
     border-radius: 10px;
     /* Bordes redondeados */
@@ -16,19 +14,25 @@
     /* Color de texto oscuro para mejor legibilidad */
 }
 
+
+
 /* Estilos específicos para el modo oscuro */
 .dark-mode .visualizador-container {
     background-color: #1e1e1e;
     /* Fondo oscuro del visualizador */
-    border: 2px solid #444;
+    border-color: var(--color-primary-green);
     /* Borde más oscuro */
     color: #ffffff;
     /* Texto claro en el visualizador */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada */
 }
 
 .dark-mode .visualizador-container .message {
     font-weight: bold;
     /* Mensaje en negrita */
+    color: #00ffcc;
+    /* Color de mensaje brillante */
 }
 
 .dark-mode .visualizador-container .square {
@@ -36,6 +40,14 @@
     /* Borde azul para el cuadrado */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     /* Sombra para el cuadrado */
+    transition: transform 0.3s;
+    /* Transición suave para el tamaño */
+}
+
+/* Efecto de pulso en el cuadrado */
+.dark-mode .visualizador-container .square:hover {
+    transform: scale(1.05);
+    /* Efecto de aumento al pasar el mouse */
 }
 
 .square {
@@ -75,6 +87,10 @@
 
 /* Estilos específicos para el modo oscuro */
 .dark-mode .message {
-    color: #ffffff;
-    /* Color de texto claro en modo oscuro */
+    color: #00ffcc;
+    /* Color de texto brillante en modo oscuro */
+    font-weight: bold;
+    /* Mensaje en negrita */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    /* Sombra para el texto del mensaje */
 }

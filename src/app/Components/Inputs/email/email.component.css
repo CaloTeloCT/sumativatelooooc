@@ -1,8 +1,5 @@
-.input-container {
-    margin: 10px 0;
-}
-
 .input {
+    font-family: 'Mountains of Christmas', cursive;
     border: 2px solid var(--color-primary-green);
     border-radius: 25px;
     padding: 10px;
@@ -10,10 +7,21 @@
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
+.texto {
+    font-family: 'Mountains of Christmas', cursive;
+}
 
 .input:focus {
     border-color: var(--color-accent-gold);
     box-shadow: 0 0 5px var(--color-accent-gold);
+}
+
+/* Estilos específicos para el modo oscuro */
+.dark-mode .input {
+    border-color: #00ffcc;
+    /* Color del borde al enfocar */
+    background-color: #3a3a3a;
+    /* Fondo ligeramente más claro al enfocar */
 }
 
 .error {

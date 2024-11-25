@@ -1,34 +1,70 @@
 /* src/app/Components/view/view.component.css */
-.container {
+.app-container {
     display: flex;
-    flex-direction: row;
-    /* Para tener controles a la izquierda y visualizador a la derecha */
-    gap: 20px;
-    /* Espacio entre controles y visualizador */
-}
-
-.controls {
-    flex: 1;
-    /* Ocupa la mitad izquierda */
-    padding: 20px;
-    background-color: #993c3c;
-    /* Color de fondo para los controles */
-    border: 1px solid #ccc;
-    /* Borde alrededor de los controles */
-    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el contenido horizontalmente */
+    padding: 30px;
+    /* Espaciado interno */
+    max-width: 800px;
+    /* Ancho máximo */
+    margin: auto;
+    /* Centrar el contenedor */
+    border-radius: 15px;
     /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+    transition: background-color 0.3s;
+    /* Transición suave para el fondo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar profundidad */
 }
 
-
-
-.container {
+/* Controles */
+.controls {
+    width: 100%;
+    /* Ancho completo */
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    flex-direction: column;
+    /* Coloca los elementos en columna */
+    gap: 15px;
+    /* Espaciado entre los controles */
+}
+
+/* Agrupación de botones */
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    /* Distribuye los botones */
     flex-wrap: wrap;
-    /* Permite que los elementos se ajusten en pantallas pequeñas */
+    /* Permite que los botones se muevan a la siguiente línea si es necesario */
+}
+
+/* Estilos para el visualizador */
+app-visualizador {
+    
+    margin-top: 30px;
+    /* Espaciado superior */
+    width: 100%;
+    /* Ancho completo */
+    max-height: 400px;
+    /* Altura máxima */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Oculta el desbordamiento */
+}
+
+/* Estilos específicos para el modo oscuro */
+.dark-mode .title {
+    color: #ffffff;
+    /* Título claro en modo oscuro */
+}
+
+.dark-mode .app-container {
+    border-color: var(--color-accent-gold);
+    background-color: #1e1e1e;
+    /* Fondo oscuro para el contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    /* Sombra más pronunciada */
 }
 
 .left-column {

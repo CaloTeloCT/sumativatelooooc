@@ -1,5 +1,5 @@
-<div class="shape">
-    <label for="emailInput">Correo Electrónico:</label>
+<div>
+    <label class="texto" for="emailInput">Correo Electrónico:</label>
     <input [(ngModel)]="email" (ngModelChange)="onEmailInput($event)" class="input"
         [ngClass]="{'input-error': emailError, 'input-warning': emailWarning, 'input-success': !emailError && email}">
     <div *ngIf="emailError" class="error-message">{{ emailError }}</div>

@@ -27,6 +27,8 @@ export class ViewComponent {
   text: string = '';
   customColor: string = '#ff0000'; // Color personalizado por defecto
   animationsEnabled: boolean = true; // Estado de animaciones
+  isDarkMode: boolean = false; // Agrega esta línea
+
 
 
   handleColorChange() {
@@ -71,6 +73,7 @@ export class ViewComponent {
   }
 
   handleDarkModeToggle() {
+    this.isDarkMode = !this.isDarkMode; // Cambia el estado de isDarkMode
     this.visualizador.toggleDarkMode(); // Llama al método toggleDarkMode del Visualizador
   }
 }  
