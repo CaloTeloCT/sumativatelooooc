@@ -21,23 +21,42 @@
     /* Sombra suave */
 }
 
-.visualizador {
-    flex: 1;
-    /* Ocupa la mitad derecha */
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
-    background-color: #b81313;
-    /* Color de fondo para el visualizador */
-    border: 1px solid #ccc;
-    /* Borde alrededor del visualizador */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+    flex-wrap: wrap;
+    /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.left-column {
+    flex: 1;
+    /* Toma el espacio disponible */
+    margin-right: 20px;
+    /* Espacio entre columnas */
+}
+
+.right-column {
+    flex: 2;
+    /* Toma más espacio que la columna izquierda */
     display: flex;
     justify-content: center;
-    /* Centrar contenido dentro del visualizador */
     align-items: center;
-    /* Centrar contenido verticalmente */
+}
+
+.visualizador {
+    border: 2px solid var(--color-accent-blue);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-background-light);
+    transition: background-color var(--transition);
+}
+
+.dark-mode .visualizador {
+    background-color: var(--color-background-dark);
 }
 
 .message {
@@ -45,19 +64,4 @@
     /* Color por defecto */
     font-size: 1.2em;
     margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        /* Cambia a columna en pantallas pequeñas */
-    }
-
-    .controls,
-    .visualizador {
-        width: 100%;
-        /* Ocupa el 100% del ancho en pantallas pequeñas */
-        margin-bottom: 20px;
-        /* Espacio entre controles y visualizador */
-    }
 }

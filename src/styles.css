@@ -1,38 +1,93 @@
 /* src/styles.css */
 :root {
-    --color-background-light: #f0f0f0;
+    --color-background-light: #ffffff;
     /* Fondo claro */
     --color-background-dark: #1a1a1a;
     /* Fondo oscuro */
-    --color-primary: #ff0000;
+    --color-primary-red: #ff0000;
     /* Rojo navideño */
-    --color-secondary: #008000;
+    --color-primary-green: #008000;
     /* Verde navideño */
-    --color-accent: #ffd700;
+    --color-accent-gold: #ffd700;
     /* Dorado */
+    --color-accent-blue: #00bfff;
+    /* Azul celeste */
     --color-text-light: #333333;
     /* Texto oscuro */
     --color-text-dark: #ffffff;
     /* Texto claro */
-    --color-blue: #00bfff;
-    /* Azul celeste */
+    --color-pine-green: #004d00;
+    /* Verde pino */
+    --color-dark-red: #8B0000;
+    /* Rojo oscuro */
     --transition: all 0.3s ease;
     /* Transición suave */
 }
 
-button {
-    background-color: var(--color-primary);
-    color: var(--color-text-dark);
-    border: none;
-    border-radius: 5px;
+/* Estilos para botones */
+.button {
+    border-radius: 8px;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color var(--transition), transform var(--transition);
+    border: none;
+    transition: background-color var(--transition), box-shadow var(--transition);
 }
 
-button:hover {
-    background-color: var(--color-accent);
-    transform: scale(1.05);
+.button:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* Estilos para los botones específicos */
+
+.button-primary {
+    background-color: var(--color-primary-green);
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-text-dark);
+}
+
+.button-secondary {
+    background-color: var(--color-accent-blue);
+    border: 2px solid var(--color-primary-red);
+    color: var(--color-text-dark);
+}
+
+.button-danger {
+    background-color: var(--color-primary-red);
+    border: 2px solid white;
+    color: var(--color-text-dark);
+}
+
+/* Estilos para inputs */
+.input-field {
+    border: 2px solid var(--color-primary-green);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input-field:focus {
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 5px var(--color-accent-gold);
+}
+
+.accept-btn {
+    background-color: var(--color-primary-green);
+    border: 25px solid var(--color-accent-gold);
+}
+
+.cancel-btn {
+    background-color: var(--color-primary-red);
+    border: 2px solid white;
+}
+
+.dark-m-btn {
+    background-color: var(--color-dark-red);
+    border: 2px solid var(--color-accent-gold);
 }
 
 .container {
@@ -41,6 +96,19 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Estilos para inputs */
+.input {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus {
+    box-shadow: 0 0 5px var(--color-accent-gold);
+}
+
 
 .input {
     padding: 10px;
@@ -87,9 +155,19 @@ button:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Estilos para el visualizador */
 .visualizador {
-    text-align: center;
+    border: 2px solid var(--color-accent-blue);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0.2);
 }
+
+/* Efectos de brillo */
+.glow {
+    text-shadow: 0 0 10px var(--color-accent-gold), 0 0 20px var(--color-accent-gold);
+}
+
 
 .message {
     color: var(--color-green);
@@ -97,8 +175,6 @@ button:hover {
     font-size: 1.2em;
     margin-top: 10px;
 }
-
-
 
 .shape {
     border-radius: 10px;
@@ -110,13 +186,41 @@ button:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsividad */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         /* Cambia a columna en pantallas pequeñas */
     }
 
-    button {
+    .button {
+        width: 100%;
+        /* Botones ocupan todo el ancho */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        /* Ambas columnas ocupan todo el ancho */
+        margin-right: 0;
+        /* Sin margen entre columnas */
+    }
+
+    .visualizador {
+        width: 90%;
+        /* Ajusta el ancho del visualizador */
+        margin: auto;
+        /* Centra el visualizador */
+    }
+
+    .button {
         width: 100%;
         /* Botones ocupan todo el ancho */
     }
@@ -124,6 +228,7 @@ button:hover {
 
 
 body {
+    font-family: 'Arial', sans-serif;
     background-color: var(--color-background-light);
     color: var(--color-text-light);
     transition: background-color var(--transition), color var(--transition);
@@ -138,14 +243,21 @@ h1,
 h2,
 h3 {
     font-family: 'Sacramento', cursive;
-    /* Fuente decorativa */
+    /* Fuente decorativa para encabezados */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 p,
 span,
 input {
-    font-family: Arial, sans-serif;
-    /* Fuente clara y legible */
+    font-family: 'Mountains of Christmas', cursive;
+    /* Fuente decorativa para párrafos y entradas */
+    transition: color var(--transition);
+}
+
+/* Estilos para el modo oscuro */
+.dark-mode .input {
+    border: 2px solid var(--color-accent-gold);
 }
 
 .dark-mode .button {
@@ -168,4 +280,25 @@ input {
 .message {
     color: #ffffff;
     /* Mensaje blanco en modo oscuro */
+}
+
+/* Transiciones suaves para todos los elementos interactivos */
+.button,
+.input {
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.input {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }

@@ -2,15 +2,10 @@
     <div class="controls">
         <h2>Controles</h2>
         <app-first-btn (colorChange)="handleColorChange()"></app-first-btn>
-        <br>
         <app-second-btn (shapeChange)="handleShapeChange()"></app-second-btn>
-        <br>
         <app-aceptar-btn (accepted)="handleAccepted()"></app-aceptar-btn>
-        <br>
         <app-cancelar-btn (canceled)="handleCanceled()"></app-cancelar-btn>
-        <br>
         <app-dark-m-btn (toggleDarkMode)="handleDarkModeToggle()"></app-dark-m-btn>
-        <br>
         <label for="colorPicker">Selecciona un color personalizado:</label>
         <input type="color" id="colorPicker" [(ngModel)]="customColor" (ngModelChange)="updateColor()" />
         <label>

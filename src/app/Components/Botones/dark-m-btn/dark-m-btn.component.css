@@ -2,6 +2,13 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.button {
+    background-color: var(--color-dark-red);
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-text-dark);
+    font-family: 'Sacramento', cursive;
+}
+
 button:hover {
     background-color: #45a049;
     /* Cambia el color de fondo al pasar el mouse */
