@@ -1,43 +1,45 @@
 /* src/styles.css */
 :root {
-    --color-red: #ff0000;
-    --color-green: #008000;
-    --color-gold: #ffd700;
-    --color-white: #ffffff;
-    --color-light-blue: #add8e6;
-    --color-error: #ff4d4d;
-    /* Rojo intenso para errores */
-    --color-warning: #ffcc00;
-    /* Dorado para advertencias */
-    --color-success: #4caf50;
-    /* Verde para éxito */
+    --color-background-light: #f0f0f0;
+    /* Fondo claro */
+    --color-background-dark: #1a1a1a;
+    /* Fondo oscuro */
+    --color-primary: #ff0000;
+    /* Rojo navideño */
+    --color-secondary: #008000;
+    /* Verde navideño */
+    --color-accent: #ffd700;
+    /* Dorado */
+    --color-text-light: #333333;
+    /* Texto oscuro */
+    --color-text-dark: #ffffff;
+    /* Texto claro */
+    --color-blue: #00bfff;
+    /* Azul celeste */
+    --transition: all 0.3s ease;
+    /* Transición suave */
 }
 
-body {
-    background: #add8e6;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: var(--color-green);
-}
-
-.button {
-    background-color: var(--color-green);
-    color: var(--color-white);
+button {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color var(--transition), transform var(--transition);
 }
 
-.button:hover {
-    background-color: var(--color-gold);
+button:hover {
+    background-color: var(--color-accent);
     transform: scale(1.05);
+}
+
+.container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .input {
@@ -90,33 +92,60 @@ h1 {
 }
 
 .message {
+    color: var(--color-green);
+    /* Color por defecto */
+    font-size: 1.2em;
     margin-top: 10px;
-    font-weight: bold;
 }
 
 
 
+.shape {
+    border-radius: 10px;
+    /* Bordes redondeados */
+    transition: box-shadow var(--transition);
+}
+
+.shape:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        /* Cambia a columna en pantallas pequeñas */
     }
 
-    .controls-container {
-        align-items: center;
+    button {
+        width: 100%;
+        /* Botones ocupan todo el ancho */
     }
 }
 
 
 body {
-    transition: background-color 0.3s, color 0.3s;
-    /* Transiciones suaves */
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .dark-mode {
-    background-color: #121212;
-    /* Fondo oscuro */
-    color: #ffffff;
-    /* Texto blanco */
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Sacramento', cursive;
+    /* Fuente decorativa */
+}
+
+p,
+span,
+input {
+    font-family: Arial, sans-serif;
+    /* Fuente clara y legible */
 }
 
 .dark-mode .button {

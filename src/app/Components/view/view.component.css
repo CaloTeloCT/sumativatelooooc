@@ -11,7 +11,7 @@
     flex: 1;
     /* Ocupa la mitad izquierda */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #993c3c;
     /* Color de fondo para los controles */
     border: 1px solid #ccc;
     /* Borde alrededor de los controles */
@@ -25,7 +25,7 @@
     flex: 1;
     /* Ocupa la mitad derecha */
     padding: 20px;
-    background-color: #fff;
+    background-color: #b81313;
     /* Color de fondo para el visualizador */
     border: 1px solid #ccc;
     /* Borde alrededor del visualizador */
@@ -38,6 +38,13 @@
     /* Centrar contenido dentro del visualizador */
     align-items: center;
     /* Centrar contenido verticalmente */
+}
+
+.message {
+    color: var(--color-green);
+    /* Color por defecto */
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 @media (max-width: 768px) {
