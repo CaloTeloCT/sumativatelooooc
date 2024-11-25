@@ -2,9 +2,10 @@
     margin: 10px 0;
 }
 
-.input {
+.input{
     border: 2px solid var(--color-primary-green);
     border-radius: 25px;
+    padding: 10px;
     margin: 10px 0;
     transition: border-color var(--transition), box-shadow var(--transition);
 }

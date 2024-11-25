@@ -1,15 +1,15 @@
 <!-- src/app/Components/visualizador/visualizador.component.html -->
-<div class="box">
+<div class="visualizador-container">
     <h2>Visualizador</h2>
     <div class="square" [ngStyle]="{'background-color': currentColor}"
         [ngClass]="{'circle': isCircle, 'square': !isCircle}" class="shape"></div>
     <div class="message">{{ message }}</div>
-</div>
 
-<div>
-    <h3>Datos ingresados:</h3>
-    <p>Email: {{ email }}</p>
-    <p>Contraseña: {{ password }}</p>
-    <p>Fuerza de la contraseña: {{ passwordStrength }}</p>
-    <p>Texto: {{ text }}</p>
+    <div>
+        <h3>Datos ingresados:</h3>
+        <p>Email: {{ email }}</p>
+        <p>Contraseña: {{ password }}</p>
+        <p>Fuerza de la contraseña: {{ passwordStrength }}</p>
+        <p>Texto: {{ text }}</p>
+    </div>
 </div>

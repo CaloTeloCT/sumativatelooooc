@@ -85,9 +85,25 @@
     border: 2px solid white;
 }
 
-.dark-m-btn {
-    background-color: var(--color-dark-red);
-    border: 2px solid var(--color-accent-gold);
+.dark-mode {
+    background-color: #121212;
+    /* Fondo oscuro */
+    color: #ffffff;
+    /* Color de texto claro */
+}
+
+.dark-mode .input {
+    background-color: #1e1e1e;
+    /* Fondo del campo de entrada en modo oscuro */
+    color: #ffffff;
+    /* Color de texto en el campo de entrada */
+    border: 2px solid #444;
+    /* Borde más oscuro */
+}
+
+.dark-mode .input:focus {
+    border-color: #007BFF;
+    /* Color del borde al enfocar en modo oscuro */
 }
 
 .container {
@@ -256,6 +272,16 @@ input {
 }
 
 /* Estilos para el modo oscuro */
+
+body.dark-mode {
+    background-color: #121212;
+    /* Fondo oscuro para toda la aplicación */
+    color: #e0e0e0;
+    /* Color de texto claro para toda la aplicación */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transiciones suaves */
+}
+
 .dark-mode .input {
     border: 2px solid var(--color-accent-gold);
 }

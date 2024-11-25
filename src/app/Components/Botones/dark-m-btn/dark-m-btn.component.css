@@ -15,3 +15,31 @@ button:hover {
     transform: scale(1.05);
     /* Aumenta ligeramente el tamaño del botón */
 }
+
+.button {
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 10px 15px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, transform 0.2s;
+    /* Transiciones suaves */
+}
+
+
+
+/* Estilos específicos para el modo oscuro */
+.dark-mode .button {
+    background-color: #0056b3;
+    /* Color de fondo más oscuro en modo oscuro */
+    color: #ffffff;
+    /* Texto claro en el botón */
+}
+
+.dark-mode .button:hover {
+    background-color: #004494;
+    /* Color aún más oscuro al pasar el mouse */
+}
